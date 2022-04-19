@@ -85,15 +85,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
         }
 
+public void Jump()
+{
+    if (!m_Jump) //&& m_CharacterController.isGrounded)
+            {
+                m_Jump = true;
+            }
+}
 
         // Update is called once per frame
         private void Update()
         {
             RotateView();
             // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump && m_CharacterController.isGrounded)
+            if (!m_Jump) //&& m_CharacterController.isGrounded)
             {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                m_Jump = Input.GetButtonDown("Jump");
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -159,6 +166,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             UpdateCameraPosition(speed);
 
             m_MouseLook.UpdateCursorLock();
+
+
+
         }
 
 
@@ -235,8 +245,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void GetInput(out float speed)
         {
             // Read input
-            float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-            float vertical = CrossPlatformInputManager.GetAxis("Vertical");
+            float horizontal = SimpleInput.GetAxis("Horizontal");
+            float vertical = SimpleInput.GetAxis("Vertical");
 
             if(!IsGrounded) {
                 if(!skipMovement) {
