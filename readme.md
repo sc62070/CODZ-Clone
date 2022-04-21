@@ -62,9 +62,3 @@ That's because I remained unusing network related resources.
 ## Bugs & Improvements
 Please write the issue on the github page when you found bugs. But I have no plan to improve this game, because this game is just for demonstration.
 
-## Donate me
-All my tutorials and projects are made for help people who want to learn. Your donation make me keep doing this :)
-
-You can support my projects by donating me:
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PVXTU5FJNBLDS)
